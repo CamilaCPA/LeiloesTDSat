@@ -67,4 +67,24 @@ public ArrayList<ProdutosDTO> listarProdutos(){
             
         return listagem;
     }
+public void alterarCondicao(ProdutosDTO produto) {
+
+        String sql = "update produtos set  condicao = ? where id = ?";
+        conn = new conectaDAO().connectDB();
+
+        try {
+            prep = conn.prepareStatement(sql);
+            prep.setString(1, produto.getCondicao());
+            prep.setInt(2, produto.getId());
+            
+            prep.executeUpdate();
+
+            prep.execute();
+            prep.close();
+
+        } catch (Exception erro) {
+            JOptionPane.showMessageDialog(null, "Erro na calsse ProdutoDAO- alterar" + erro.getMessage());
+        }
+    }
+
 }
