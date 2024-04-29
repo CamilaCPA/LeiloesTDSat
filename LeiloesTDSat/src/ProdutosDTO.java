@@ -10,8 +10,8 @@
 public class ProdutosDTO {
     private Integer id;
     private String nome;
-    private Integer valor;
-    private String status;
+    private Float valor;
+    private String condicao;
 
     public Integer getId() {
         return id;
@@ -21,12 +21,12 @@ public class ProdutosDTO {
         return nome;
     }
 
-    public Integer getValor() {
+    public Float getValor() {
         return valor;
     }
 
-    public String getStatus() {
-        return status;
+    public String getCondicao() {
+        return condicao;
     }
 
     public void setId(Integer id) {
@@ -37,12 +37,12 @@ public class ProdutosDTO {
         this.nome = nome;
     }
 
-    public void setValor(Integer valor) {
+    public void setValor(Float valor) {
         this.valor = valor;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setCondicao(String condicao) {
+        this.condicao = condicao;
     }
     
 }

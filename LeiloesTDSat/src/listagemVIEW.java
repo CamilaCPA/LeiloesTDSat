@@ -215,7 +215,7 @@ public class listagemVIEW extends javax.swing.JFrame {
                     listagem.get(i).getId(),
                     listagem.get(i).getNome(),
                     listagem.get(i).getValor(),
-                    listagem.get(i).getStatus()
+                    listagem.get(i).getCondicao()
                 });
             }
         } catch (Exception e) {
