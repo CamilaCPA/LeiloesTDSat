@@ -62,7 +62,7 @@ public ArrayList<ProdutosDTO> listarProdutos(){
             }
 
         } catch (SQLException erro) {
-            JOptionPane.showMessageDialog(null, "Erro na classe CategoriaDAO em pasquisarCategoria" + erro.getMessage());
+            JOptionPane.showMessageDialog(null, "Erro na classe ProdutosDAO em listarProdutos" + erro.getMessage());
         }
             
         return listagem;
@@ -83,8 +83,33 @@ public void alterarCondicao(ProdutosDTO produto) {
             prep.close();
 
         } catch (Exception erro) {
-            JOptionPane.showMessageDialog(null, "Erro na calsse ProdutoDAO- alterar" + erro.getMessage());
+            JOptionPane.showMessageDialog(null, "Erro na calsse ProdutosDAO- alterar" + erro.getMessage());
         }
     }
+public ArrayList<ProdutosDTO> listarProdutosVendidos(){
+        
+        String sql = "Select * from produtos where condicao = 'Vendido'";
+        conn = new conectaDAO().connectDB();
 
+        try {
+
+            prep = conn.prepareStatement(sql);
+            rs = prep.executeQuery();
+
+            while (rs.next()) {
+                ProdutosDTO produto = new ProdutosDTO();
+                produto.setId(rs.getInt("id"));
+                produto.setNome(rs.getString("nome"));
+                produto.setValor(rs.getFloat("valor"));
+                produto.setCondicao(rs.getString("condicao"));
+
+                listagem.add(produto);
+            }
+
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Erro na classe ProdutosDAO - listarProdutosVendidos" + erro.getMessage());
+        }
+            
+        return listagem;
+    }
 }
