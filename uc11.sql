@@ -68,3 +68,26 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- 1. Create the database
+create database uc11;
+
+-- 2. Habilitando a database para uso
+use uc11;
+
+-- 3. Criando a tabela de produtos
+create table produtos(
+id int primary key auto_increment,
+nome varchar (150) not null,
+valor decimal (10,2) not null,
+condicao varchar (100) not null
+);
+
+-- 4. Inserindo dados na tabela produtos
+INSERT INTO produtos (id, nome, valor, condicao) VALUES
+(2, 'PS4', 1500, 'Vendido'),
+(3, 'Xbox 360', 800, 'Vendido'),
+(4, 'Iphone 12', 4800, 'Vendido'),
+(5, 'PS2', 400, 'A Venda');
+
+select * from produtos
