@@ -43,7 +43,7 @@ public class ProdutosDAO {
 
 public ArrayList<ProdutosDTO> listarProdutos(){
         
-        /*String sql = "Select * from produtos";
+        String sql = "Select * from produtos";
         conn = new conectaDAO().connectDB();
 
         try {
@@ -63,7 +63,7 @@ public ArrayList<ProdutosDTO> listarProdutos(){
 
         } catch (SQLException erro) {
             JOptionPane.showMessageDialog(null, "Erro na classe CategoriaDAO em pasquisarCategoria" + erro.getMessage());
-        }*/
+        }
             
         return listagem;
     }
